@@ -1,0 +1,4 @@
+LOTR_BASE_URL=https://the-one-api.herokuapp.com/v1
+CAT_BASE_URL=https://api.thecatapi.com/v1/images/search?
+LOTR_API_KEY=rp8imP3rhpXsi3gqVwc4
+CAT_API_KEY=3fc3d5d1-22db-4f05-ba10-5582bfbc3c27

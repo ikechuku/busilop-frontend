@@ -1,7 +1,8 @@
-import React, { lazy, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Container } from "./elements";
+import Grid from "./gridLayout"
 
 const Home = () => {
   return (
@@ -21,12 +22,17 @@ const Home = () => {
         <meta property="og:description" content="" />
       </Helmet>
       <Container>
-        <div>
-          <Link to="/lotr">View LOTR</Link>
+        <div className="nav">
+          <h2>Busilop code Generator</h2>
         </div>
+        <Grid />
       </Container>
     </Fragment>
   );
 };
 
 export default Home;
+
+
+
+

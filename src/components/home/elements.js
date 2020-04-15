@@ -13,19 +13,25 @@ const ascend = keyframes`
 `;
 
 export const Container = styled.div`
-  background-color: #f2f8ff;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  a {
-    margin: 20px;
+  /* border: solid 2px red; */
+color: white;
+  .nav{
+    width:100%;
+    height: 4rem;
+    text-align: center;
+    h2{
+      color: white;
+    }
   }
+  box-sizing: border-box;
+  background-color: #363062;
+  width: 100%;
+  height: 100vh;
+
 `;
 
 export const SectionOne = styled.section`
-  border-bottom: 1px solid rgba(112, 112, 112, 0.1);
+  border-bottom: 1px solid rg ba(112, 112, 112, 0.1);
   padding: 12px;
   ${({ noborder }) =>
     noborder &&

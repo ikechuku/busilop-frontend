@@ -1,4 +1,4 @@
-import React, { lazy, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Container } from "./elements";

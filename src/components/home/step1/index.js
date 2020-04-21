@@ -1,19 +1,32 @@
 import React from 'react';
-import styled from "styled-components";
+import { makeStyles } from '@material-ui/core/styles';
+import Alert from '@material-ui/lab/Alert';
+import TextField from '@material-ui/core/TextField';
 
 
-const App = () => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: theme.spacing(1),
+    // width: '25ch',
+    color: 'red',
+
+  },
+  big: {
+    width: '100%',
+    color: 'red',
+  }
+}));
+
+export default function BasicTextFields() {
+  const classes = useStyles();
+
   return (
     <div>
-      <h1>General application details</h1>
+      <h1>General Project Details</h1>
+      <form className={classes.root} noValidate autoComplete="off">
+        <Alert severity="info">This consists of the basic information about the application  </Alert>
+        <TextField className={classes.big} id="outlined-basic" label="Outlined" variant="outlined" />
+      </form>
     </div>
   );
 }
-
-const Card = styled.div`
-width: 100%;
-height: 10rem;
-padding: 1.5rem;
-`
-
-export default App;

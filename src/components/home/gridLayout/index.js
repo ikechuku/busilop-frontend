@@ -11,6 +11,7 @@ import Step2 from '../step2'
 import Step3 from '../step3'
 import Step4 from '../step4'
 import Err from '../../errorBoundary'
+import { StepForm } from '../elements'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+  return ['General application details', 'Front-end Configuration', 'Back-end Configuration', 'Interactive Database creation tool'];
 }
 
 function getStepContent(step) {
@@ -173,19 +174,22 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
         {allStepsCompleted() ? (
           <div>
             <Typography className={classes.instructions}>
-              All steps completed - you&apos;re finished
+              All steps completed - finished!
             </Typography>
             <Button onClick={handleReset}>Reset</Button>
+            <Button onClick={handleComplete} >Finish</Button>
           </div>
         ) : (
             <div>
-              <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+              <StepForm>
+                <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+              </StepForm>
               <div>
                 <Button
-                  variant="contained"
+                  variant="outlined"
                   disabled={activeStep === 0}
                   onClick={handleBack}
-                  color="danger"
+                  color="secondary"
                   className={classes.button}>
                   Back
               </Button>

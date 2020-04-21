@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet-async";
 // import { Link } from "react-router-dom";
-import { Container } from "./elements";
+import { Container, BigTitle, BigSubTitle } from "./elements";
 import Grid from "./gridLayout"
 
 const Home = () => {
@@ -22,10 +22,13 @@ const Home = () => {
         <meta property="og:description" content="" />
       </Helmet>
       <Container>
-        <div className="nav">
-          <h2>Busilop code Generator</h2>
+        <div className="card">
+
+          <div className="nav">
+            <h1>Create a new Scaffolding</h1>
+          </div>
+          <Grid />
         </div>
-        <Grid />
       </Container>
     </Fragment>
   );

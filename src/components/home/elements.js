@@ -13,20 +13,30 @@ const ascend = keyframes`
 `;
 
 export const Container = styled.div`
+  box-sizing: border-box;
+  /* background-color: #222831; */
+  width: 100%;
+  height: 100vh;
+  /* color: white; */
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   /* border: solid 2px red; */
-color: white;
+  /* padding: 10px; */
+    
+    .card{
+      width: 90%;
+    }
   .nav{
     width:100%;
-    height: 4rem;
+    height: 5rem;
+    padding-top: 2rem;
     text-align: center;
     h2{
       color: white;
     }
   }
-  box-sizing: border-box;
-  background-color: #363062;
-  width: 100%;
-  height: 100vh;
 
 `;
 
@@ -71,5 +81,16 @@ export const BigSubTitle = styled.h2`
   color: #545969;
   margin: 20px auto 0;
   font-family: "Inter";
-  animation: ${ascend} 3s linear 0s 1;
+  animation: ${ascend} 0.6s linear 0s 1;
 `;
+
+
+
+export const StepForm = styled.div`
+width: 100%;
+/* max-width: 520px; */
+border: solid 1px yellow;
+height: 50vh;
+padding: 1.5rem;
+margin-bottom: 3rem;
+`

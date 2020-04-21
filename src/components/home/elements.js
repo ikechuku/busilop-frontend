@@ -89,8 +89,16 @@ export const BigSubTitle = styled.h2`
 export const StepForm = styled.div`
 width: 100%;
 /* max-width: 520px; */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 border: solid 1px yellow;
 height: 50vh;
 padding: 1.5rem;
 margin-bottom: 3rem;
+
+.frontend{
+  
+}
 `

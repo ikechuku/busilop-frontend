@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepButton from '@material-ui/core/StepButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { observer } from 'mobx-react-lite'
+import axios from 'axios';
+import nodeStoreContext from '../../../stores/nodeStore'
+
+
 // import the steps pages
 import Step1 from '../step1'
 import Step2 from '../step2'
@@ -36,6 +41,9 @@ function getSteps() {
   return ['General application details', 'Front-end Configuration', 'Back-end Configuration', 'Interactive Database creation tool'];
 }
 
+
+
+
 function getStepContent(step) {
   switch (step) {
     case 0:
@@ -51,7 +59,7 @@ function getStepContent(step) {
   }
 }
 
-export default function HorizontalNonLinearAlternativeLabelStepper() {
+const HorizontalNonLinearAlternativeLabelStepper = observer(() => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState(new Set());
@@ -145,6 +153,20 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
     return completed.has(step);
   }
 
+  function postData(data) {
+    axios.post('http://localhost:5000/home', {
+      data
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  const store = useContext(nodeStoreContext)
+
   return (
     <div className={classes.root}>
       <Stepper alternativeLabel nonLinear activeStep={activeStep}>
@@ -152,7 +174,8 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
           const stepProps = {};
           const buttonProps = {};
           if (isStepOptional(index)) {
-            buttonProps.optional = <Typography variant="caption">Optional</Typography>;
+            // appends optional to the step title
+            // buttonProps.optional = <Typography variant="caption">Optional</Typography>;
           }
           if (isStepSkipped(index)) {
             stepProps.completed = false;
@@ -177,7 +200,7 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
               All steps completed - finished!
             </Typography>
             <Button onClick={handleReset}>Reset</Button>
-            <Button onClick={handleComplete} >Finish</Button>
+            <Button onClick={postData(store.all)}>Finish</Button>
           </div>
         ) : (
             <div>
@@ -228,4 +251,5 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
       </div>
     </div>
   );
-}
+});
+export default HorizontalNonLinearAlternativeLabelStepper

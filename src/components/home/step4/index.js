@@ -3,7 +3,7 @@ import React from 'react';
 const App = () => {
   return (
     <div>
-      <h1>Interactive Database creation tool</h1>
+      <h2>Interactive Database creation tool</h2>
     </div>
   );
 }

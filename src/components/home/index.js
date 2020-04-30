@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Helmet } from "react-helmet-async";
 // import { Link } from "react-router-dom";
-import { Container, BigTitle, BigSubTitle } from "./elements";
+import { Container } from "./elements";
 import Grid from "./gridLayout"
 
 const Home = () => {

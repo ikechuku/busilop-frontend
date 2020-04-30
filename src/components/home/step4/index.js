@@ -1,9 +1,9 @@
 import React from 'react';
-
+import History from '../history'
 const App = () => {
   return (
     <div>
-      <h2>Interactive Database creation tool</h2>
+      <History/>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Alert from '@material-ui/lab/Alert';
 import TextField from '@material-ui/core/TextField';
@@ -35,7 +35,7 @@ const BasicTextFields = observer(() => {
   const store = useContext(nodeStoreContext)
 
 
-  
+
   const handleChange = () => {
     store.all.checkedA = !store.all.checkedA
   };
@@ -45,22 +45,21 @@ const BasicTextFields = observer(() => {
   return (
 
     <div>
-      <h2> {store.all.appName} Project Details</h2>
-      <form className={classes.root} noValidate autoComplete="off">
+      <h2> Application Project Details</h2>
+      <form className={classes.root} Validate autoComplete="off">
         <br />
         <Alert severity="info">This consists of the basic information about the application </Alert>
         <br />
-        <TextField onChange={(e) => store.setAuthorName(e.target.value) } className={classes.big} id="authorName" label="Author Name" variant="outlined" />
+        <TextField value={store.all.baseName} onChange={(e) => store.setBaseName(e.target.value)} className={classes.big} id="baseName" label="Application Base Name" variant="outlined" />
         <br />
         <br />
-        <TextField onChange={(e) => store.setAuthorEmail(e.target.value) } className={classes.big} id="authorEmail" label="Author Email" variant="outlined" />
+        <TextField value={store.all.packageName} onChange={(e) => store.setPackageName(e.target.value)} className={classes.big} id="packageName" label="Package Name" variant="outlined" />
+        {/* <br />
+        <br />
+        <TextField value={store.all.author} onChange={(e) => store.setAppName(e.target.value)} className={classes.big} id="appName" label="Application Name" variant="outlined" /> */}
         <br />
         <br />
-        <TextField onChange={(e) => store.setAppName(e.target.value) }  className={classes.big} id="appName" label="Application Name" variant="outlined" />
-        <br />
-        <br />
-        <TextareaAutosize onChange={(e) => store.setAppDescription(e.target.value) } className={classes.big} aria-label="minimum height" rowsMin={5} placeholder="Application Description" />
-        <FormGroup column>
+        {/* <FormGroup column>
           <FormControlLabel
             control={
               <Switch
@@ -72,29 +71,8 @@ const BasicTextFields = observer(() => {
             }
             label="Add ReadMe file"
           />
-          <FormControlLabel
-            control={
-              <Switch
-                checked={store.all.checkedB}
-                onChange={handleChange}
-                name="checkedB"
-                color="primary"
-              />
-            }
-            label="Use Docker"
-          />
-          {/* <FormControlLabel
-            control={
-              <Switch
-                checked={store.all.checkedC}
-                onChange={handleChange}
-                name="checkedC"
-                color="primary"
-              />
-            }
-            label=""
-          /> */}
-        </FormGroup>
+
+        </FormGroup> */}
       </form>
     </div>
   );

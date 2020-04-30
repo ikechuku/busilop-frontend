@@ -8,9 +8,6 @@ import Typography from '@material-ui/core/Typography';
 import { observer } from 'mobx-react-lite'
 import axios from 'axios';
 import nodeStoreContext from '../../../stores/nodeStore'
-
-
-// import the steps pages
 import Step1 from '../step1'
 import Step2 from '../step2'
 import Step3 from '../step3'
@@ -38,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['General application details', 'Front-end Configuration', 'Back-end Configuration', 'Interactive Database creation tool'];
+  return ['General application details', 'Front-end Configuration', 'Back-end Configuration', 'Summary'];
 }
 
 
@@ -154,7 +151,7 @@ const HorizontalNonLinearAlternativeLabelStepper = observer(() => {
   }
 
   function postData(data) {
-    axios.post('http://localhost:5000/home', {
+    axios.post('http://52.152.245.152:5000/genrun', {
       data
     })
       .then(function (response) {
@@ -248,6 +245,7 @@ const HorizontalNonLinearAlternativeLabelStepper = observer(() => {
               </div>
             </div>
           )}
+
       </div>
     </div>
   );

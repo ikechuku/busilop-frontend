@@ -4,7 +4,7 @@ import App from "./main";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "../containers/ErrorBoundary";
-import stores from "../stores";
+// import stores from "../stores";
 // import { Provider } from 'mobx-react'
 
 const Root = () => (

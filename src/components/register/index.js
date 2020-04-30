@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <Fragment>
       <Helmet>
-        <title>Busilop Code Generator app</title>
+        <title>RESGISTER PAGE</title>
 
         <meta name="description" content="" />
         <meta name="author" content="Joel" />
@@ -22,7 +22,7 @@ const Home = () => {
       </Helmet>
       <Container>
         <div>
-          <Link to="/lotr">View LOTR</Link>
+          <Link to="/lotr">THE RESGIESRE PAGE</Link>
         </div>
       </Container>
     </Fragment>

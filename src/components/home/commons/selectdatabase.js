@@ -34,26 +34,28 @@ const ControlledOpenSelect = observer(() => {
 
   return (
     <div>
-      <Button className={classes.button} onClick={handleOpen}>
-        Select a technology for the backend
-       </Button>
+      {/* <Button className={classes.button} onClick={handleOpen}>
+        Select a Database 
+       </Button> */}
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label">blueprint</InputLabel>
+        <InputLabel id="demo-controlled-open-select-label">Database</InputLabel>
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
-          value={store.all.backend}
-          onChange={(e) => store.setBackend(e.target.value)}
+          value={store.all.databaseType}
+          onChange={(e) => store.setDatabaseType(e.target.value)}
         >
           {/* <MenuItem value="">
             <em>None</em>
           </MenuItem> */}
-          <MenuItem default value='java'>Java (default)</MenuItem>
-          <MenuItem value='node'>Node </MenuItem>
-          <MenuItem value='kotlin'>Kotlin </MenuItem>
+          <MenuItem default value='SQL'>SQL </MenuItem>
+          <MenuItem value='mongo'>MongoDB </MenuItem>
+          <MenuItem value='Cassandra'>Cassandra </MenuItem>
+          <MenuItem value='Couchbase'>Couchbase </MenuItem>
+          <MenuItem value='None'> No database </MenuItem>
         </Select>
       </FormControl>
 

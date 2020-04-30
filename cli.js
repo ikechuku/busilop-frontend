@@ -2,8 +2,18 @@ var runner = require("yeoman-gen-run");
 var express = require("express");
 var router = express.Router();
 
+const fs = require('fs');
+
+
+
 /* GET users listing. */
-router.post("/", async function(req, res, err) {
+router.post("/", async function (req, res, err) {
+  fs.writeFile("/tmp/test", "Hey there!", function (err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("The file was saved!");
+  });
   try {
     console.log(req.body);
     const answers = {
@@ -32,7 +42,7 @@ router.post("/", async function(req, res, err) {
 
     var genName = "busilop";
     var outDir = "./output";
-    
+
     var promise = await runner.runGenerator(
       genName,
       {

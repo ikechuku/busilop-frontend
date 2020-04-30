@@ -93,12 +93,12 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-border: solid 1px yellow;
+/* border: solid 1px yellow; */
 height: 50vh;
 padding: 1.5rem;
 margin-bottom: 3rem;
 
 .frontend{
-  
+ width:  100% 
 }
 `

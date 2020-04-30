@@ -35,25 +35,24 @@ const ControlledOpenSelect = observer(() => {
   return (
     <div>
       <Button className={classes.button} onClick={handleOpen}>
-        Select a technology for the backend
+        Select a Clientside Package Manager
        </Button>
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label">blueprint</InputLabel>
+        <InputLabel id="demo-controlled-open-select-label"></InputLabel>
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
-          value={store.all.backend}
-          onChange={(e) => store.setBackend(e.target.value)}
+          value={store.all.packageManager}
+          onChange={(e) => store.setPackageManager(e.target.value)}
         >
           {/* <MenuItem value="">
             <em>None</em>
           </MenuItem> */}
-          <MenuItem default value='java'>Java (default)</MenuItem>
-          <MenuItem value='node'>Node </MenuItem>
-          <MenuItem value='kotlin'>Kotlin </MenuItem>
+          <MenuItem default value='npm'>npm</MenuItem>
+          <MenuItem value='yarn'>yarn </MenuItem>
         </Select>
       </FormControl>
 

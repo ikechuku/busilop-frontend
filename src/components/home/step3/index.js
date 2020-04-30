@@ -1,9 +1,14 @@
-import BuildIcon from '@material-ui/icons/Build';
-import React , {useContext} from 'react';
+// import BuildIcon from '@material-ui/icons/Build';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Backendselect from '../commons/select'
 import { observer } from 'mobx-react-lite'
 import nodeStoreContext from '../../../stores/nodeStore'
+import TextField from '@material-ui/core/TextField';
+import SelectDB from '../commons/selectdatabase'
+import Authentication from '../commons/authentication'
+import BuildTool from '../commons/buildTool'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,24 +24,24 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
 }));
-const ControlledExpansionPanels= observer(()=> {
+const ControlledExpansionPanels = observer(() => {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-  
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
-  
+
   const store = useContext(nodeStoreContext)
 
 
 
   return (
     <div className={classes.root}>
-      <h2>{store.all.appName} Backend Configuration</h2>
+      <h2>Backend Configuration</h2>
       {/* <BuildIcon fontSize="large" /> */}
       <div className="frontend">
         <Backendselect />
+        <SelectDB />
+        <Authentication />
+        <BuildTool />
+        {/* <TextField value={store.all.authorEmail} onChange={(e) => store.setAuthorEmail(e.target.value)} className={classes.big} id="authorEmail" label="Author Email" variant="outlined" /> */}
+
       </div>
 
     </div>

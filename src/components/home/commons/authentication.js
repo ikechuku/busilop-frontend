@@ -34,26 +34,26 @@ const ControlledOpenSelect = observer(() => {
 
   return (
     <div>
-      <Button className={classes.button} onClick={handleOpen}>
-        Select a technology for the backend
-       </Button>
+      {/* <Button className={classes.button} onClick={handleOpen}>
+        Select a Database 
+       </Button> */}
       <FormControl className={classes.formControl}>
-        <InputLabel id="demo-controlled-open-select-label">blueprint</InputLabel>
+        <InputLabel id="authentication-select-label">Authentication</InputLabel>
         <Select
-          labelId="demo-controlled-open-select-label"
-          id="demo-controlled-open-select"
+          labelId="authentication-select-label"
+          id="authentication-label"
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
-          value={store.all.backend}
-          onChange={(e) => store.setBackend(e.target.value)}
+          value={store.all.authenticationType}
+          onChange={(e) => store.setAuthenticationType(e.target.value)}
         >
           {/* <MenuItem value="">
             <em>None</em>
           </MenuItem> */}
-          <MenuItem default value='java'>Java (default)</MenuItem>
-          <MenuItem value='node'>Node </MenuItem>
-          <MenuItem value='kotlin'>Kotlin </MenuItem>
+          <MenuItem default value='JWT'>JWT </MenuItem>
+          <MenuItem value='Oauth'>Oauth </MenuItem>
+          <MenuItem value='HTTP_Session'>HTTP Session </MenuItem>
         </Select>
       </FormControl>
 

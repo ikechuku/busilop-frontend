@@ -5,6 +5,7 @@ import CustomBlock from './custom'
 import CompactForm from './form'
 import Title from './title'
 import Button from './button'
+import Skip from './skip';
 import button from './title'
 const JSX = `
 import React from 'react'
@@ -16,4 +17,4 @@ export default () => (
 const myJSX = `
 
 `
-export default () => <Editor src={JSX} blocks={{ CompactForm, Title, Button, CustomBlock, HeaderBasic }} />
+export default () => <Editor src={JSX} blocks={{ CompactForm, Title, Button, CustomBlock, HeaderBasic, Skip }} />

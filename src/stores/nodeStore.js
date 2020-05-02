@@ -24,7 +24,8 @@ class generatorForm {
     backend: ''
   }
 
-  setBaseName(value) {
+
+  setFormData(value) {
     this.all.baseName = value;
   }
   setAppDescription(value) {

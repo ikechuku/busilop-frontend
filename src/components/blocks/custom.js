@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { Link } from '@theme-ui/components'
+// import { Link } from '@theme-ui/components'
+
 import { ControlType, applyPropertyControls } from 'property-controls'
 const CustomBlock = ({ justifyContent = 'space-between', ...props }) => {
   return (

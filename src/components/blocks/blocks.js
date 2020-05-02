@@ -1,19 +1,38 @@
-import React from 'react'
-import Editor from 'blocks-ui'
-import { HeaderBasic, TaglineBold, } from '@blocks/react'
-import CustomBlock from './custom'
-import CompactForm from './form'
-import Title from './title'
-import Button from './button'
-import button from './title'
+import React, { useContext } from 'react'
+import Editor from "blocks-ui";
+import { HeaderBasic, TaglineBold } from "@blocks/react";
+import CustomBlock from "./custom";
+import CompactForm from "./form";
+import Title from "./title";
+import Button from "./button";
+import Skip from "./skip";
+import axios from 'axios';
+// import { observer } from 'mobx-react-lite';
+import nodeStoreContext from '../../stores/nodeStore';
+
 const JSX = `
 import React from 'react'
 export default () => (
   <Blocks.Root>
   </Blocks.Root>
 )
-`
+`;
 const myJSX = `
 
-`
-export default () => <Editor src={JSX} blocks={{ CompactForm, Title, Button, CustomBlock, HeaderBasic }} />
+`;
+export default () => {
+
+  const store = useContext(nodeStoreContext)
+  const onChange = (newCode) => {
+    store.setTemplate(newCode)
+    console.log(store.all.template);
+  };
+
+  return (
+    <Editor
+      src={JSX}
+      blocks={{ CompactForm, Title, Button, CustomBlock, HeaderBasic, Skip }}
+      onChange={onChange} // get  code
+    />
+  );
+};

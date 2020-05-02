@@ -2,26 +2,17 @@ import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Alert from '@material-ui/lab/Alert';
 import TextField from '@material-ui/core/TextField';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
+// import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+// import FormGroup from '@material-ui/core/FormGroup';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import Switch from '@material-ui/core/Switch';
 import { observer } from 'mobx-react-lite'
 import nodeStoreContext from '../../../stores/nodeStore'
-// import StoreContext from '../../../stores/nodeStore';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: theme.spacing(1),
-    // width: '60%',
-    // color: 'red',
-    // display: 'flex',
-    // flexDirection: 'column',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // border: 'solid 1px red'
-
   },
   big: {
     width: '100%',
@@ -40,8 +31,6 @@ const BasicTextFields = observer(() => {
     store.all.checkedA = !store.all.checkedA
   };
 
-
-  // console.log(store.all.appName);
   return (
 
     <div>

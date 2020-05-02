@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from 'react'
 import Editor from "blocks-ui";
 import { HeaderBasic, TaglineBold } from "@blocks/react";
 import CustomBlock from "./custom";
@@ -6,7 +6,10 @@ import CompactForm from "./form";
 import Title from "./title";
 import Button from "./button";
 import Skip from "./skip";
-import button from "./title";
+import axios from 'axios';
+// import { observer } from 'mobx-react-lite';
+import nodeStoreContext from '../../stores/nodeStore';
+
 const JSX = `
 import React from 'react'
 export default () => (
@@ -18,8 +21,11 @@ const myJSX = `
 
 `;
 export default () => {
+
+  const store = useContext(nodeStoreContext)
   const onChange = (newCode) => {
-    console.log(newCode);
+    store.setTemplate(newCode)
+    console.log(store.all.template);
   };
 
   return (

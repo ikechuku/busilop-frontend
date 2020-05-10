@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './style.css'
-var todoItems = [];
-todoItems.push({ index: 1, value: "Write my todo list", done: true });
-todoItems.push({ index: 2, value: "learn react", done: false });
-todoItems.push({ index: 3, value: "learn Webpack", done: false });
-todoItems.push({ index: 4, value: "learn ES6", done: false });
-todoItems.push({ index: 5, value: "learn Routing", done: false });
-todoItems.push({ index: 6, value: "learn Redux", done: false });
+import nodeStoreContext from '../../stores/nodeStore'
+import Button from '@material-ui/core/Button';
+import axios from 'axios'
+import { observer } from 'mobx-react-lite';
+
+// const storeComponent = observer(() => {
+//   const store = useContext(nodeStoreContext)
+//   return (
+//     <div></div>
+//   );
+// })
+
+
+
+var table = [];
+table.push({ index: 1, value: "id" });
+table.push({ index: 2, value: "Name" });
+table.push({ index: 3, value: "Email" });
+table.push({ index: 4, value: "Phone Number" });
 
 class TodoList extends React.Component {
   render() {
@@ -39,8 +51,8 @@ class TodoListItem extends React.Component {
     var todoClass = this.props.item.done ? "done" : "undone";
     return (
       <li className="list-group-item">
-        <div className={todoClass}>
-          <span className="glyphicon glyphicon-ok icon" onClick={this.onClickDone}></span>
+        <div id="item" className={todoClass}>
+          {/* <span className="glyphicon glyphicon-ok icon" onClick={this.onClickDone}></span> */}
           {this.props.item.value}
           <button type="button" className="close" onClick={this.onClickClose}>&times;</button>
         </div>
@@ -68,54 +80,80 @@ class TodoForm extends React.Component {
   render() {
     return (
       <form ref="form" onSubmit={this.onSubmit} className="form-inline">
-        <input type="text" ref="itemName" className="form-control" placeholder="add a new todo..." />
-        <button type="submit" className="btn btn-default"></button>
+        <input type="text" ref="itemName" className="form-control" placeholder="add new fields..." />
+        <Button variant="contained" color="primary" type="submit">+</Button>
+
+        {/* <button type="submit" className="btn btn-default"></button> */}
       </form>
     )
   }
 }
 
-class TodoHeader extends React.Component {
-  render() {
-    return (
-      <h3 className="title">ToDo List</h3>
-    )
-  }
+const TodoHeader = () => {
+  const store = useContext(nodeStoreContext)
+  return (
+    <h3 className="title">Database builder</h3>
+  );
 }
 
+const PostButton = () => {
+  const store = useContext(nodeStoreContext)
+  let setTable = async () => { store.setTables(table) };
+  let data = store.all
+  return (
+    <Button
+      onClick={() => {
+        setTable().then(
+          console.log(data)
+        )
+        .then(
+
+          axios.post('http://localhost:5000/form', { data })
+        )
+
+        //   .then(console.log(data)
+        //   )
+      }}
+      variant="contained"
+      color="primary">
+      Create Tables
+    </Button>
+  );
+}
 class TodoApp extends React.Component {
   constructor(props) {
     super(props);
     this.addItem = this.addItem.bind(this);
     this.removeItem = this.removeItem.bind(this);
     this.markTodoDone = this.markTodoDone.bind(this);
-    this.state = { todoItems: todoItems };
+    this.state = { table: table };
   }
   addItem(todoItem) {
-    todoItems.unshift({
-      index: todoItems.length + 1,
+    table.push({
+      index: table.length + 1,
       value: todoItem.newItemValue,
-      done: false
     });
-    this.setState({ todoItems: todoItems });
+    this.setState({ table: table });
   }
   removeItem(itemIndex) {
-    todoItems.splice(itemIndex, 1);
-    this.setState({ todoItems: todoItems });
+    table.splice(itemIndex, 1);
+    this.setState({ table: table });
   }
   markTodoDone(itemIndex) {
-    var todo = todoItems[itemIndex];
-    todoItems.splice(itemIndex, 1);
+    var todo = table[itemIndex];
+    table.splice(itemIndex, 1);
+
     todo.done = !todo.done;
-    todo.done ? todoItems.push(todo) : todoItems.unshift(todo);
-    this.setState({ todoItems: todoItems });
+    todo.done ? table.push(todo) : table.unshift(todo);
+    this.setState({ table: table });
   }
   render() {
     return (
       <div className="todoForm">
         <TodoHeader />
         <TodoForm addItem={this.addItem} />
-        <TodoList items={todoItems} removeItem={this.removeItem} markTodoDone={this.markTodoDone} />
+        <TodoList items={table} removeItem={this.removeItem} markTodoDone={this.markTodoDone} />
+        <PostButton />
       </div>
     )
   }

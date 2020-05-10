@@ -20,14 +20,15 @@ class generatorForm {
     template: '',
     buildTool: '',
     model: '',
-    fields: [],
-    backend: ''
+    tables: [],
+    backend: '',
   }
 
 
-  setFormData(value) {
-    this.all.baseName = value;
+  setTables(value) {
+    this.all.tables = value;
   }
+
   setAppDescription(value) {
     this.all.appDescription = value;
   }
@@ -95,7 +96,8 @@ decorate(generatorForm, {
   setAuthenticationType: action,
   setTemplate: action,
   setBackend: action,
-  setBuildTool: action
+  setBuildTool: action,
+  setTables: action
 })
 
 

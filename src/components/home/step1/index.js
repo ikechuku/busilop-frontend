@@ -39,7 +39,7 @@ const BasicTextFields = observer(() => {
         <br />
         <Alert severity="info">This consists of the basic information about the application </Alert>
         <br />
-        <TextField value={store.all.baseName} onChange={(e) => store.setBaseName(e.target.value)} className={classes.big} id="baseName" label="Application Base Name" variant="outlined" />
+        <TextField value={store.all.setDatabaseName} onChange={(e) => store.setDatabaseName(e.target.value)} className={classes.big} id="baseName" label="Application Base Name" variant="outlined" />
         <br />
         <br />
         <TextField value={store.all.packageName} onChange={(e) => store.setPackageName(e.target.value)} className={classes.big} id="packageName" label="Package Name" variant="outlined" />

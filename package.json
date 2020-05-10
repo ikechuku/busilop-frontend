@@ -24,6 +24,7 @@
     "react": "^16.12.0",
     "react-animated-modal": "^1.1.1",
     "react-dom": "^16.12.0",
+    "react-formio": "^4.3.0",
     "react-helmet-async": "^1.0.4",
     "react-inview-monitor": "^2.3.0",
     "react-js-pagination": "^3.0.3",

@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import SelectDB from '../commons/selectdatabase'
 import Authentication from '../commons/authentication'
 import BuildTool from '../commons/buildTool'
+import Button from '@material-ui/core/Button';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -41,9 +42,8 @@ const ControlledExpansionPanels = observer(() => {
         <Authentication />
         <BuildTool />
         {/* <TextField value={store.all.authorEmail} onChange={(e) => store.setAuthorEmail(e.target.value)} className={classes.big} id="authorEmail" label="Author Email" variant="outlined" /> */}
-
       </div>
-
+      <Button href='https://cdpn.io/ikechuku/debug/mdeyjqM/WPALYZdvWdLk' className="secondary" variant="contained">Database Builder</Button>
     </div>
   );
 }

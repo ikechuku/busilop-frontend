@@ -1,8 +1,8 @@
-import  jhipStore  from './jhipStore'
+import jhipStore from './jhipStore'
 import nodeStore from './nodeStore'
-import contacts from './contacts'
+import entityStore from './entityStore'
 const stores = {
-  jhipStore, nodeStore, contacts
+  jhipStore, nodeStore, entityStore
 }
 
 export default stores

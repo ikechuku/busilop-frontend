@@ -25,6 +25,7 @@ class generatorForm {
   }
 
 
+
   setTables(value) {
     this.all.tables = value;
   }

@@ -1,10 +1,5 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-// import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-// import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-// import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-// import Typography from '@material-ui/core/Typography';
-// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Radio from '../commons/radio'
 import PackageManager from '../commons/packageManager'
 import { observer } from 'mobx-react-lite'
@@ -29,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 const ControlledExpansionPanels = observer(() => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  const store = useContext(nodeStoreContext)
+  // const store = useContext(nodeStoreContext)
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };

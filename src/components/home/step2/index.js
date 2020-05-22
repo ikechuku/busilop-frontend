@@ -38,7 +38,7 @@ const ControlledExpansionPanels = observer(() => {
       <PackageManager />
       <br />
       <br />
-      <Button href='https://cdpn.io/ikechuku/debug/dyYdzOa/xnrabZYxpaDA' variant="contained">Ui Builder</Button>
+      <Button href='/form' variant="contained">Ui Builder</Button>
     </div>
   );
 }

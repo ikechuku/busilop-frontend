@@ -43,7 +43,7 @@ const ControlledExpansionPanels = observer(() => {
         <BuildTool />
         {/* <TextField value={store.all.authorEmail} onChange={(e) => store.setAuthorEmail(e.target.value)} className={classes.big} id="authorEmail" label="Author Email" variant="outlined" /> */}
       </div>
-      <Button href='https://cdpn.io/ikechuku/debug/mdeyjqM/WPALYZdvWdLk' className="secondary" variant="contained">Database Builder</Button>
+      <Button href='/builder' className="secondary" variant="contained">Database Builder</Button>
     </div>
   );
 }

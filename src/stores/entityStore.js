@@ -4,33 +4,34 @@ import { createContext } from 'react'
 
 
 class EntityForm {
-  all = [
+  Entities = [
     {
       name: "Employee",
-      fields: [{ field_title: "Firstname", type: "string" },
-      { field_title: "Lastname", type: "string" }
+      fields: [{ field_title: "Firstname", type: "String" },
+      { field_title: "Lastname", type: "String" }
       ]
     },
     {
       name: "Country",
-      fields: [{ field_title: "Firstname", type: "string" },
+      fields: [{ field_title: "Firstname", type: "String" },
       { field_title: "population", type: "long" }
       ]
     }
   ]
 
-  relationship = {
+  relationships = [{
     type: "one to many", entity: "Employee"
   }
-
+  ]
 
   addEntity(value) {
-    this.all.push(value)
+    console.log(value, "fuck joel kk");
+    this.Entities = [...this.Entities, value]
   }
 }
 
 decorate(EntityForm, {
-  all: observable,
+  Entities: observable,
   addEntity: action
 })
 

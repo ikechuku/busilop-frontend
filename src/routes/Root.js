@@ -1,22 +1,26 @@
 import React from 'react'
 import App from "./main";
-// import StoreProvider from "../stores/nodeStore";
+import { Provider } from "react-redux";
+import getStore from "../store";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { PersistGate } from "redux-persist/integration/react";
 import ErrorBoundary from "../containers/ErrorBoundary";
-// import stores from "../stores";
-// import { Provider } from 'mobx-react'
+export const { store, persistor } = getStore();
+
 
 const Root = () => (
   <ErrorBoundary>
-    <HelmetProvider>
-      <BrowserRouter>
-        {/* <Provider data={stores.jStore}> */}
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <HelmetProvider>
+        <BrowserRouter>
           <App />
-        {/* </Provider> */}
-      </BrowserRouter>
-    </HelmetProvider>
-  </ErrorBoundary>
+        </BrowserRouter>
+      </HelmetProvider>
+    </PersistGate>
+  </Provider>
+</ErrorBoundary>
 );
 
 export default Root;

@@ -14,7 +14,7 @@ const FieldList = ({ table, setTable }) => {
     <ul className="list-group">
       {table.map((item, index) => {
         return (
-          <li key={index} removeField={removeField} >
+          <li key={index}  >
             {item.field_title} , {item.type} <IconButton
               aria-label="Delete"
               onClick={() => {

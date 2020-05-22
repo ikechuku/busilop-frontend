@@ -3,17 +3,13 @@ import ReactDOM from 'react-dom';
 import "./styles/index.css";
 import "./styles/animate.css";
 import Root from "./routes/Root";
-import stores from './stores'
-import { Provider } from 'mobx-react'
+import store from './store'
 
 
 // import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <Provider jdata={stores.jStore} contacts={stores.contacts} >
-    <Root stores />
-  </Provider>
-  , document.getElementById('root'));
+ReactDOM.render(<Root store={store} />, document.getElementById("root"));
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

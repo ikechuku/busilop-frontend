@@ -1,8 +1,17 @@
 body {
   font-family: "Raleway", "Microsoft JhengHei", sans-serif;
-  margin: 0;
+  margin-left: 80px;
   padding: 0;
   background: #f0efe9;
+}
+
+.entitycard{
+  align-items: center;
+  margin-top: 20px;
+  border: solid black 0.8px
+}
+.d-flex{
+  display: flex;
 }
 
 .todoForm {

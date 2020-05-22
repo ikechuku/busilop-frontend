@@ -1,0 +1,16 @@
+import * as React from "react";
+import styles from "./../styles";
+import { AbstractControl } from "react-reactive-form";
+
+// React SFC to render Input element
+const TextInput = ({
+  handler,
+  meta: { label, placeholder },
+}: AbstractControl) => (
+  <div>
+    <label>{label}:</label>
+    <input placeholder={placeholder} {...handler()} />
+  </div>
+);
+
+export default TextInput;

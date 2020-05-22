@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react'
 
-const FieldForm = ({ table, setTable }) => {
+const FieldForm = ({ table, setTable, setName, Name }) => {
   console.log(table)
   const [Field, setField] = useState("")
   const [Type, setType] = useState("")
+
 
   function addField(e) {
     setField(e.target.value)
@@ -11,12 +12,17 @@ const FieldForm = ({ table, setTable }) => {
   function addType(e) {
     setType(e.target.value)
   }
+  function addName(e) {
+    setName(e.target.value)
+  }
 
 
   return (
     <div className="center">
       <div>
-        <input type="text" placeholder="Entity name" />
+        <input type="text" placeholder="Entity name" value={Name} onChange={addName} />
+        <br />
+        <br />
       </div>
 
       <input type="text" value={Field} onChange={addField} placeholder="Field" />
@@ -35,9 +41,7 @@ const FieldForm = ({ table, setTable }) => {
           console.log(table);
         }
       }} />
-
     </div>
-
   );
 }
 

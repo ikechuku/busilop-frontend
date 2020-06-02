@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import React from "react";
+// import React from "react";
 import { jsx } from "theme-ui";
-import { Controls } from "blocks-ui";
+// import { Controls } from "blocks-ui";
 import { ControlType, applyPropertyControls } from "property-controls";
 
 const Skip = ({ justifyContent = "space-between", ...props }) => {

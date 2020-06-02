@@ -1,26 +1,31 @@
 body {
   font-family: "Raleway", "Microsoft JhengHei", sans-serif;
-  margin-left: 80px;
-  padding: 0;
-  background: #f0efe9;
+  /* margin-left: 80px; */
+  padding: 4rem;
+  background: darkgray;
 }
 
 .entitycard{
   align-items: center;
   margin-top: 20px;
-  border: solid black 0.8px
+  
 }
 .d-flex{
   display: flex;
 }
 
+.i-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .todoForm {
-  width: 860px;
   height: auto;
   /* max-width: 378px; */
-  min-width: 360px;
+  /* min-width: 360px; */
   min-height: 400px;
-  margin: 25px auto;
+  /* margin: 25px auto; */
   border-radius: 7px;
   box-shadow: 0 0 5px #cfd0d5;
   background: white;
@@ -107,3 +112,54 @@ body {
   left: 16px;
   top: 4px;
 } */
+
+
+.summary{
+  /* border: solid 1px red; */
+  box-sizing: border-box;
+}
+
+
+.w-50{
+  /* margin: 0 2px; */
+  width: 50%;
+}
+
+.mw{
+  width: 100%;
+  max-width: 24rem;
+  border-radius: 8px;
+  border: solid 1px;
+  margin: auto;
+  background-color: #919191;
+  color: white;
+}
+
+.er{
+  width: 100%;
+  max-width: 24rem;
+  border-radius: 8px;
+  border: solid 1px;
+  margin: auto;
+  background-color: #919191;
+  color: white;
+}
+
+.add{
+  margin:1rem 0;
+}
+.card-header{
+  border-bottom: solid 1px whitesmoke;
+  margin: 2px 10px;
+  padding: 1rem;
+}
+
+.mx-auto{
+  margin: auto ;
+}
+
+.pob{
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}

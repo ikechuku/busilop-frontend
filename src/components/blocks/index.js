@@ -1,10 +1,8 @@
-import React, { useContext, Component } from 'react';
-// import { HeaderBasic, TaglineContent, } from '@blocks/react'
+import React, { useContext } from 'react';
 import Blocks from './blocks'
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import "./style.css"
-// import { observer } from 'mobx-react-lite'
 import nodeStoreContext from '../../stores/nodeStore'
 
 

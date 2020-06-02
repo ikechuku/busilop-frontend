@@ -1,27 +1,69 @@
-import React from 'react'
-import { Templates , FormBuilder} from 'react-formio';
-// import Builder from './builder'
+import React from "react";
+import { Templates, FormBuilder } from "react-formio";
 import { Link } from "react-router-dom";
+import { connect, useSelector } from "react-redux";
+import {
+  getFormDataAction,
+  addFormDataAction,
+} from "../../actions/Form.actions";
 
-Templates.framework = 'bootstrap';
+Templates.framework = "bootstrap";
 
-const App = () => {
+const App = (props) => {
+  const { formStore } = useSelector((state) => state);
+  // console.log(formStore, "This is the form store###");
+  // const [state, setstate] = useState("");
 
-  const saved_schema = {}
+  function handleState(e) {
+    if (e) {
+      return e;
+    } else return {};
+    // props.addFormDataAction(e)
+  }
+
   return (
-    <div className="container">
-      <h3>Form Builder</h3>
-<FormBuilder form={{ display: 'form', Templates }} onChange={(schema) => console.log(schema)} />
-      {/* <Builder /> */}
-      <br /><br /><br /><br />
+    <div className="">
+      <h1>Form Builder </h1>
+      <div className="container cont">
+        <FormBuilder
+          form={{ display: "form", Templates }}
+          onChange={(schema) => {
+            // console.log(props.getFormDataAction, "INITIAL");
 
-      {/* <h3>Form Render</h3>
-      <Form src={schema} onSubmit={console.log} /> */}
-       <Link to="/builder">
-     <input type="button" className="btn btn-lg btn-success" value="Next (Form Builder)"/>
-    </Link>
+            props.addFormDataAction(handleState(schema));
+            console.log(formStore, "UPDATED store******");
+          }}
+        />
+        <br />
+        {/* <input
+          className="btn btn-info btn-lg"
+          type="button"
+          value="Save Form"
+          onClick={() => alert(JSON.stringify(formStore))}
+        /> */}
+        
+        <br />
+        <br />
+        <div className="d-flex">
+          <div></div>
+          <Link to="/builder">
+            <input
+              type="button"
+              className="btn btn-lg btn-success"
+              value="Next (Database Builder)"
+            />
+          </Link>
+        </div>
       </div>
-  );
-}
+      
 
-export default App;
+    </div>
+  );
+};
+
+const mapDispatchToProps = {
+  addFormDataAction,
+  getFormDataAction,
+};
+
+export default connect(null, mapDispatchToProps)(App);

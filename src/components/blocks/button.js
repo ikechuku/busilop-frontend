@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { Link } from '@theme-ui/components'
+// import { Link } from '@theme-ui/components'
 import { ControlType, applyPropertyControls } from 'property-controls'
 const Button = ({ justifyContent = 'space-between', ...props }) => {
   return (
@@ -11,7 +11,6 @@ const Button = ({ justifyContent = 'space-between', ...props }) => {
         flexDirection: 'column',
         alignItems: 'center',
         width: '140px',
-        width: '12`20px',
         textAlign: 'center',
         justifyContent
       }}

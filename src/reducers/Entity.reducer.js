@@ -1,48 +1,29 @@
-import {
-  AUTH_START,
-  AUTH_SUCCESS,
-  AUTH_FAIL
-} from "../actions/types";
+import { ENTITY_DATA, ENTITY_DATA_ADD } from "../actions/types";
 
-const initialState = {
-  info: {},
-  error: null,
-  loading: false
-};
-
-const authStart = (state, action) => {
-  return {
-    ...state,
-    loading: true
-  };
-};
-
-const authSuccess = (state, action) => {
-  return {
-    ...state,
-    info: action.info,
-    error: null,
-    loading: false
-  };
-};
-
-const authFail = (state, action) => {
-  return {
-    ...state,
-    error: action.error,
-    info: action.info,
-    loading: false
-  };
-};
+const initialState = [
+  {
+    name: "Employee",
+    fields: [
+      { field_title: "firstname", type: "String" },
+      { field_title: "lastname", type: "String" },
+      { field_title: "department", type: "String" },
+    ],
+  },
+  {
+    name: "Department",
+    fields: [
+      { field_title: "Name", type: "String" },
+      { field_title: "NoOfEmployees", type: "Long" },
+    ],
+  },
+];
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case AUTH_START:
-      return authStart(state, action);
-    case AUTH_SUCCESS:
-      return authSuccess(state, action);
-    case AUTH_FAIL:
-      return authFail(state, action);
+    case ENTITY_DATA:
+      return [...state];
+    case ENTITY_DATA_ADD:
+      return [...state, action.info]
     default:
       return state;
   }

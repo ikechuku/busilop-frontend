@@ -27,9 +27,9 @@ const BasicTextFields = observer(() => {
 
 
 
-  const handleChange = () => {
-    store.all.checkedA = !store.all.checkedA
-  };
+  // const handleChange = () => {
+  //   store.all.checkedA = !store.all.checkedA
+  // };
 
   return (
 

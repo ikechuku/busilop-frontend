@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 
 const FieldForm = ({ table, setTable, setName, Name }) => {
   console.log(table)
@@ -20,17 +20,17 @@ const FieldForm = ({ table, setTable, setName, Name }) => {
   return (
     <div className="center">
       <div>
-        <input type="text" placeholder="Entity name" value={Name} onChange={addName} />
+        <input className="form-control" type="text" placeholder="Entity name" value={Name} onChange={addName} />
         <br />
         <br />
       </div>
 
-      <input type="text" value={Field} onChange={addField} placeholder="Field" />
+      <input className="form-control" type="text" value={Field} onChange={addField} placeholder="Field" />
 
-      <input type="text" value={Type} onChange={addType} placeholder="type" />
-      <input type="button" value="add" onClick={() => {
+      <input className="form-control" type="text" value={Type} onChange={addType} placeholder="type" />
+      <input className="btn btn-info add" type="button" value="add" onClick={() => {
 
-        if (Field.length == 0 || Type.length == 0) {
+        if (Field.length === 0 || Type.length === 0) {
           alert("please enter a field")
         }
         else {

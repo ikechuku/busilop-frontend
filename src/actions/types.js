@@ -1,0 +1,12 @@
+export const ENTITY_DATA = "ENTITY_DATA";
+export const ENTITY_DATA_ADD = "ENTITY_DATA_ADD";
+
+export const RELATIONSHIP_DATA = "RELATIONSHIP_DATA";
+export const RELATIONSHIP_DATA_ADD = "RELATIONSHIP_DATA_ADD";
+
+export const CONFIG_DATA = "CONFIG_DATA";
+export const CONFIG_DATA_ADD = "CONFIG_DATA_ADD";
+
+export const FORM_DATA = "FORM_DATA";
+export const FORM_DATA_ADD = "FORM_DATA_ADD";
+

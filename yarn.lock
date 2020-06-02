@@ -8517,6 +8517,10 @@ react-merge-refs@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-1.0.0.tgz#d6b297b9a62a266460a3c0d8b9d920731d8bbe63"
 
+react-pure-loaders@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-pure-loaders/-/react-pure-loaders-3.0.1.tgz#e364d5b1847281dac1d0a5769f912a0fdfd68bc0"
+
 react-reactive-form@^1.0.32:
   version "1.0.32"
   resolved "https://registry.yarnpkg.com/react-reactive-form/-/react-reactive-form-1.0.32.tgz#42b651350f2ab6feb341521d249489c6704ae175"

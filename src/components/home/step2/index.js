@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Radio from '../commons/radio'
 import PackageManager from '../commons/packageManager'
 import { observer } from 'mobx-react-lite'
-import nodeStoreContext from '../../../stores/nodeStore'
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,11 +22,6 @@ const useStyles = makeStyles((theme) => ({
 
 const ControlledExpansionPanels = observer(() => {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-  // const store = useContext(nodeStoreContext)
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
-  };
 
   return (
     <div className={classes.root}>

@@ -27,7 +27,6 @@ const App = (props) => {
 <br/>
 <li><strong> Authentication: </strong> {summary.auth} </li> 
 <br/>
-<li><strong> Database Url: </strong> {summary.dbUrl} </li> 
 <br/>
 </ul>
         <br />

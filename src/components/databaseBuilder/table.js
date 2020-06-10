@@ -7,10 +7,7 @@ import { useSelector } from "react-redux";
 const App = ({ setEntity, setRelationship, store }) => {
   const { entityStore } = useSelector((state) => state);
 
-  const [table, setTable] = useState([
-    { id: 1, field_title: "firstname", type: "String" },
-    { id: 2, field_title: "lastname", type: "String" },
-  ]);
+  const [table, setTable] = useState([]);
 
   const [Name, setName] = useState("");
   const [Type, setType] = useState("");
@@ -82,7 +79,7 @@ const App = ({ setEntity, setRelationship, store }) => {
 
   return (
     <div className="todoForm d-flex">
-      <div className="container">
+      <div className="">
         <h4>Create Entity</h4>
         <FieldForm
           setTable={setTable}
@@ -94,11 +91,11 @@ const App = ({ setEntity, setRelationship, store }) => {
         <input
           value="save entity"
           type="button"
-          className="btn btn-primary" 
+          className="btn btn-primary"
           onClick={createEntity}
         />
       </div>
-      <div className="container">
+      <div className="">
         <h4>Create Relationship </h4>
         <label htmlFor="fk">Entity</label>
         <select
@@ -156,11 +153,12 @@ const App = ({ setEntity, setRelationship, store }) => {
         <br />
         <br />
         <input
-        type="button"
-        value="add relationship"
-        className="btn btn-primary"
-        disabled
-        variant="contained" color="primary" onClick={addRelationship}/>
+          type="button"
+          value="add relationship"
+          className="btn btn-primary"
+          color="primary"
+          onClick={addRelationship}
+        />
       </div>
     </div>
   );

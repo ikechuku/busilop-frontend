@@ -1,4 +1,5 @@
 import React from "react";
+import Sockt from "../socket";
 import Table from "./table";
 import { connect, useSelector } from "react-redux";
 import {
@@ -20,7 +21,7 @@ const App = (props) => {
     entityStore,
     relationshipStore,
     configStore,
-    formStore,    
+    formStore,
   } = useSelector((state) => state);
   console.log(relationshipStore, "This is the relationship store###");
 
@@ -40,26 +41,33 @@ const App = (props) => {
 
   return (
     <div className="i-flex ">
-      <div className="w-50">
-        <h1 className="h1 text-center">Entity Builder</h1>
-        <Table
-          setEntity={props.addEntityDataAction}
-          setRelationship={props.addRelationshipDataAction}
-          store={store}
-        ></Table>
-      </div>
-
-      <div className="w-50">
-        <div className="col">
-          <h3 className="text-center"><strong>Entities</strong> </h3>
-          <EntityCard store={store} />
+      <Sockt />
+      <h1 className="h1 text-center">Entity Builder</h1>
+      <div className="w-100 d-flex">
+        <div className="w-50">
+          <Table
+            setEntity={props.addEntityDataAction}
+            setRelationship={props.addRelationshipDataAction}
+            store={store}
+          ></Table>
         </div>
 
-        <div className="col">
-          <h3 className="text-center h3"><strong>Relationships</strong> </h3>
-          <RelationshipCard store={store} />
+        <div className="w-50">
+          <div className="col">
+            <h3 className="text-center">
+              <strong>Entities</strong>{" "}
+            </h3>
+            <EntityCard store={store} />
+          </div>
+
+          <div className="w-50 text-center">
+            <h3 className="text-center">
+              <strong>Relationships</strong>{" "}
+            </h3>
+            <RelationshipCard store={store} />
+          </div>
+          <PostButton store={stores} />
         </div>
-        <PostButton store={stores} />
       </div>
     </div>
   );

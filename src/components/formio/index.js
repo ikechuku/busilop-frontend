@@ -11,8 +11,7 @@ Templates.framework = "bootstrap";
 
 const App = (props) => {
   const { formStore } = useSelector((state) => state);
-  // console.log(formStore, "This is the form store###");
-  // const [state, setstate] = useState("");
+
 
   function handleState(e) {
     if (e) {
@@ -35,17 +34,20 @@ const App = (props) => {
           }}
         />
         <br />
-        {/* <input
-          className="btn btn-info btn-lg"
-          type="button"
-          value="Save Form"
-          onClick={() => alert(JSON.stringify(formStore))}
-        /> */}
-        
+
         <br />
         <br />
         <div className="d-flex">
           <div></div>
+          <div>
+          {/* <Link to="/summary">
+            <input
+              type="button"
+              className="btn btn-lg btn-info"
+              value="back"
+            />
+          </Link> */}
+          &nbsp;
           <Link to="/builder">
             <input
               type="button"
@@ -53,6 +55,8 @@ const App = (props) => {
               value="Next (Database Builder)"
             />
           </Link>
+          </div>
+          
         </div>
       </div>
       

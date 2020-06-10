@@ -4,18 +4,19 @@ import { Route, Switch } from "react-router-dom";
 
 // const Home = lazy(() => import("../../containers/Home"));
 const Wizard = lazy(() => import("../../containers/Wizard"));
-const Blocks = lazy(() => import("../../containers/Blocks"));
+const Socket = lazy(() => import("../../containers/Socket"));
 const Builder = lazy(() => import("../../containers/DataBuilder"));
-const Formio = lazy(() => import("../../containers/Formio"));
+const Form = lazy(() => import("../../containers/Formio"));
+const Summary = lazy(() => import("../../containers/Summary"));
 
 const App = () => (
   <Suspense fallback={<Loading />}>
     <Switch>
       <Route exact path="/" component={Wizard} />
-      <Route exact path="/blocks" component={Blocks} />
+      <Route exact path="/socket" component={Socket} />
       <Route exact path="/builder" component={Builder} />
-      <Route exact path="/form" component={Formio} />
-
+      <Route exact path="/summary" component={Summary} />
+      <Route exact path="/form" component={Form} />
     </Switch>
   </Suspense>
 );

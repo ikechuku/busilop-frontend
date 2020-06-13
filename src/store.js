@@ -10,7 +10,7 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 const middleware = applyMiddleware(thunk, promise);
 const enhancer = composeWithDevTools(middleware);
 const persistConfig = {
-  key: "sdhjaaf",
+  key: "shas",
   storage,
   // stateReconciler: hardSet
 };

@@ -43,14 +43,15 @@ function App({ store }) {
               value="Go to App"
             />
           </a>
+          <br />
           &nbsp; &nbsp;
-          <a href="http://localhost:5000/download">
+          {/* <a href="http://localhost:5000/download">
             <input
               type="button"
               className="btn btn-lg btn-primary"
               value="Download JAR"
             />
-          </a>
+          </a> */}
         </>
       ) : null}
       <br />

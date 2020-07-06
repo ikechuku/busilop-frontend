@@ -6065,34 +6065,6 @@ jsplumb@^2.13.2:
   version "2.13.2"
   resolved "https://registry.yarnpkg.com/jsplumb/-/jsplumb-2.13.2.tgz#77462f56cf66ee4ad3456da91b1c546925179145"
 
-jsplumbtoolkit-demo-support@../../jsplumb-src/jsplumbtoolkit-demo-support.tgz:
-  version "2.1.2"
-  resolved "../../jsplumb-src/jsplumbtoolkit-demo-support.tgz#63866984fa01787f69ff4fc3d5ea204fb848d1ef"
-
-jsplumbtoolkit-drop@../../jsplumb-src/jsplumbtoolkit-drop.tgz:
-  version "2.1.2"
-  resolved "../../jsplumb-src/jsplumbtoolkit-drop.tgz#1e3c72241f6526cca35acc190b11e4aa2b3c1a55"
-
-jsplumbtoolkit-react-drop@../../jsplumb-src/jsplumbtoolkit-react-drop.tgz:
-  version "2.1.2"
-  resolved "../../jsplumb-src/jsplumbtoolkit-react-drop.tgz#10c5adcbe70bb34aff06fc3bd62c2276946d76d9"
-
-jsplumbtoolkit-react@../../jsplumb-src/jsplumbtoolkit-react.tgz:
-  version "2.1.2"
-  resolved "../../jsplumb-src/jsplumbtoolkit-react.tgz#cdec302087eddc5916936d1bc7891ca5a65a199f"
-
-jsplumbtoolkit-syntax-highlighter@../../jsplumb-src/jsplumbtoolkit-syntax-highlighter.tgz:
-  version "2.1.2"
-  resolved "../../jsplumb-src/jsplumbtoolkit-syntax-highlighter.tgz#beb9f07453bfbf59feb4b2a6db5cf8458b8bb4a2"
-
-jsplumbtoolkit-undo-redo@../../jsplumb-src/jsplumbtoolkit-undo-redo.tgz:
-  version "2.1.2"
-  resolved "../../jsplumb-src/jsplumbtoolkit-undo-redo.tgz#b48c2d586388edd0770c265fa8556e72c7f55251"
-
-jsplumbtoolkit@../../jsplumb-src/jsplumbtoolkit.tgz:
-  version "2.1.2"
-  resolved "../../jsplumb-src/jsplumbtoolkit.tgz#5c7eb33e68252823dc443a7bb94134594fdc5bb7"
-
 jsprim@^1.2.2:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jsprim/-/jsprim-1.4.1.tgz#313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2"

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 import { BarLoader } from "react-spinners";
-import axios from "axios";
+// import axios from "axios";
 
 function App({ store }) {
   const ENDPOINT = "http://127.0.0.1:5000";
@@ -36,7 +36,7 @@ function App({ store }) {
       {response === "complete" ? (
         <>
           {" "}
-          <a target="_blank" href="http://localhost:8080">
+          <a target="_blank" rel="noopener noreferrer" href="http://localhost:8080">
             <input
               type="button"
               className="btn btn-lg btn-primary"

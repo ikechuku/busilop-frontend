@@ -28,11 +28,19 @@ const App = (props) => {
           form={{ display: "form", Templates }}
           onChange={(schema) => {
             // console.log(props.getFormDataAction, "INITIAL");
-
             props.addFormDataAction(handleState(schema));
             console.log(formStore, "UPDATED store******");
           }}
         />
+<h4>OR</h4>
+<form class="form-inline">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPassword2" class="sr-only"></label>
+    <input type="text" class="form-control" id="inputPassword2" placeholder="enter form url"/>
+  </div>
+  <button type="submit" class="btn btn-info mb-2">Confirm</button>
+</form>
+
         <br />
 
         <br />
@@ -52,15 +60,12 @@ const App = (props) => {
             <input
               type="button"
               className="btn btn-lg btn-success"
-              value="Next (Database Builder)"
+              value="Next"
             />
           </Link>
-          </div>
-          
+          </div>         
         </div>
       </div>
-      
-
     </div>
   );
 };

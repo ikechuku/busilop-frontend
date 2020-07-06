@@ -1,19 +1,19 @@
 import React from "react";
 import Sockt from "../socket";
-import Table from "./table";
+// import Table from "./table";
 import { connect, useSelector } from "react-redux";
 import {
   getEntityDataAction,
   addEntityDataAction,
 } from "../../actions/Entity.actions";
-import EntityCard from "./EntityCard";
+// import EntityCard from "./EntityCard";
 
 import { addRelationshipDataAction } from "../../actions/Relationship.action";
 
 import { getConfigDataAction } from "../../actions/Config.actions";
 
 import { getFormDataAction } from "../../actions/Form.actions";
-import RelationshipCard from "./RelationshipCard";
+// import RelationshipCard from "./RelationshipCard";
 import PostButton from "./PublishButton";
 
 const App = (props) => {
@@ -25,10 +25,10 @@ const App = (props) => {
   } = useSelector((state) => state);
   console.log(relationshipStore, "This is the relationship store###");
 
-  const store = {
-    entities: entityStore,
-    relationships: relationshipStore,
-  };
+  // const store = {
+  //   entities: entityStore,
+  //   relationships: relationshipStore,
+  // };
 
   const stores = {
     entities: entityStore,
@@ -44,16 +44,16 @@ const App = (props) => {
       <Sockt />
       <h1 className="h1 text-center">Entity Builder</h1>
       <div className="w-100 d-flex">
-        <div className="w-50">
+        {/* <div className="w-50">
           <Table
             setEntity={props.addEntityDataAction}
             setRelationship={props.addRelationshipDataAction}
             store={store}
           ></Table>
-        </div>
+        </div> */}
 
         <div className="w-50">
-          <div className="col">
+          {/* <div className="col">
             <h3 className="text-center">
               <strong>Entities</strong>{" "}
             </h3>
@@ -65,7 +65,7 @@ const App = (props) => {
               <strong>Relationships</strong>{" "}
             </h3>
             <RelationshipCard store={store} />
-          </div>
+          </div> */}
           <PostButton store={stores} />
         </div>
       </div>

@@ -12,7 +12,6 @@ Templates.framework = "bootstrap";
 const App = (props) => {
   const { formStore } = useSelector((state) => state);
 
-
   function handleState(e) {
     if (e) {
       return e;
@@ -27,19 +26,19 @@ const App = (props) => {
         <FormBuilder
           form={{ display: "form", Templates }}
           onChange={(schema) => {
-            // console.log(props.getFormDataAction, "INITIAL");
+            console.log(schema);
             props.addFormDataAction(handleState(schema));
             console.log(formStore, "UPDATED store******");
           }}
         />
-<h4>OR</h4>
+        {/* <h4>OR</h4>
 <form class="form-inline">
   <div class="form-group mx-sm-3 mb-2">
     <label for="inputPassword2" class="sr-only"></label>
     <input type="text" class="form-control" id="inputPassword2" placeholder="enter form url"/>
   </div>
-  <button type="submit" class="btn btn-info mb-2">Confirm</button>
-</form>
+  <button type="submit" class="btn btn-info mb-2" onL>Confirm</button>
+</form> */}
 
         <br />
 
@@ -48,22 +47,15 @@ const App = (props) => {
         <div className="d-flex">
           <div></div>
           <div>
-          {/* <Link to="/summary">
-            <input
-              type="button"
-              className="btn btn-lg btn-info"
-              value="back"
-            />
-          </Link> */}
-          &nbsp;
-          <Link to="/builder">
-            <input
-              type="button"
-              className="btn btn-lg btn-success"
-              value="Next"
-            />
-          </Link>
-          </div>         
+            &nbsp;
+            <Link to="/builder">
+              <input
+                type="button"
+                className="btn btn-lg btn-success"
+                value="Next"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

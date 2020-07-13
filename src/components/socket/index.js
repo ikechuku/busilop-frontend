@@ -17,26 +17,20 @@ function App({ store }) {
   return (
     <h3 className="text-center">
       {response === "loading" ? <BarLoader width="800" height="30" /> : null}
-      {response === "Running Service to Handle Setup Form (1/5)" ? (
-        <BarLoader width="800" height="30" />
-      ) : null}
-      {response === "Writing yo-rc.son file step:(2/5)" ? (
-        <BarLoader width="800" height="30" />
-      ) : null}
-      {response === "Creating JDL Entities step:(1/3)" ? (
-        <BarLoader width="800" height="30" />
-      ) : null}
       {response === "Running Blueprint Generator step:(2/3)" ? (
         <BarLoader width="800" height="30" />
       ) : null}
-      {response ===
-      "generating executable JAR file from application-prod.yml step:(3/3))" ? (
+      {response === "building docker images" ? (
         <BarLoader width="800" height="30" />
       ) : null}
-      {response === "complete" ? (
+      {response === "Finished running backend services" ? (
         <>
           {" "}
-          <a target="_blank" rel="noopener noreferrer" href="http://localhost:8080">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://localhost:9000"
+          >
             <input
               type="button"
               className="btn btn-lg btn-primary"

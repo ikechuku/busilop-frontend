@@ -14,7 +14,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.49",
     "@mdx-js/react": "^1.5.8",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "jsplumb": "^2.13.2",
     "react": "^16.12.0",
